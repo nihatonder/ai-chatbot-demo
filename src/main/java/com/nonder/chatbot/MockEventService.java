@@ -18,20 +18,20 @@ public class MockEventService implements Function<MockEventService.Request, Mock
     }
 
     List<Event> partyList = List.of(
-            new Event("Happy Hour", LocalDate.of(2024, 10, 18)),
-            new Event("New Year Party", LocalDate.of(2024, 12, 21))
+            new Event("Happy Hour", LocalDate.now().plusDays(5)),
+            new Event("New Year Party", LocalDate.now().withDayOfYear(360))
     );
 
     List<Event> sportList = List.of(
-            new Event("Scuba Diving", LocalDate.of(2024, 10, 20)),
-            new Event("Windsurfing", LocalDate.of(2024, 10, 25)),
-            new Event("Running", LocalDate.of(2024, 11, 01))
+            new Event("Scuba Diving", LocalDate.now().withDayOfYear(200)),
+            new Event("Windsurfing", LocalDate.now().withDayOfYear(250)),
+            new Event("Running", LocalDate.now().plusDays(70))
     );
 
     List<Event> techTalkList = List.of(
-            new Event("Code review", LocalDate.of(2024, 11, 21)),
-            new Event("IoT solutions", LocalDate.of(2024, 12, 19)),
-            new Event("GraalVM with AWS Lambda", LocalDate.of(2025, 1, 16))
+            new Event("Code review", LocalDate.now().plusDays(5)),
+            new Event("IoT solutions", LocalDate.now().plusDays(35)),
+            new Event("GraalVM with AWS Lambda", LocalDate.now().plusDays(65))
     );
 
     public Response apply(Request request) {
